@@ -10,6 +10,9 @@ function getOptions() {
 
 function getURL() {
   const dynamicOptions = getOptions();
+  if (dynamicOptions.useTurnstile) {
+    return "https://challenges.cloudflare.com/turnstile/v0/api.js?compat=recaptcha";
+  }
   const hostname = dynamicOptions.useRecaptchaNet ? "www.recaptcha.net" : "www.google.com";
   if (dynamicOptions.enterprise) {
     return `https://${hostname}/recaptcha/enterprise.js?onload=${callbackName}&render=explicit`;

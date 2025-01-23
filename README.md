@@ -159,6 +159,7 @@ __enterprise__: if you want to use Google Enterprise Recaptcha, instead of the f
 Example global properties:
 ```js
 window.recaptchaOptions = {
+  useTurnstile: false,
   useRecaptchaNet: true,
   enterprise: true,
 };
